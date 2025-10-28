@@ -57,19 +57,16 @@ def Guess(y):
                 if letter not in SafeLetters:
                     for item in Guesses[:]:
                         if letter in item:
-                            #print(f'Absent: "{letter}" is in {item} - Removed')
                             Guesses.remove(item)
             elif c_element.get_attribute('aria-label').split(",")[2].strip() == "present in another position":
                 SafeLetters.append(letter)
                 for item in Guesses[:]:
                     if letter not in item or letter == item[(x - 1)]:
-                        #print(f'Present: "{letter}" is not in {item} - Removed')
                         Guesses.remove(item)
             elif c_element.get_attribute('aria-label').split(",")[2].strip() == "correct":
                 SafeLetters.append(letter)
                 for item in Guesses[:]:
                     if letter != item[(x - 1)]:
-                        #print(f'Correct: "{letter}" is not in {item} at location {x - 1}- Removed')
                         Guesses.remove(item)
         time.sleep(1)
         print(Guesses)
@@ -78,8 +75,8 @@ def Guess(y):
         print(f"Guesses: {y - 1}")
         input('Press "Enter" to exit.')
         quit()
-#Begin Guessing
 
+#Begin Guessing
 #Guess 1
 print(f'Words Possible: {len(Guesses)}')
 Guess(1)
@@ -105,4 +102,5 @@ if len(Guesses) <= 0:
     input('Press "Enter" to exit.')
     quit()
 else:
+
     print("You lost.")
