@@ -102,5 +102,4 @@ if len(Guesses) <= 0:
     input('Press "Enter" to exit.')
     quit()
 else:
-
     print("You lost.")
