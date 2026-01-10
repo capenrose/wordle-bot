@@ -23,7 +23,7 @@ Guesses = WordList.copy()
 SafeLetters = []
 
 #Enter the game
-continue_button = driver.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/div/div/div[2]/button[3]')
+continue_button = driver.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/div/div/div[2]/div/button[3]')
 continue_button.click()
 time.sleep(1)
 x_button = driver.find_element(By.XPATH,'/html/body/div[2]/div/dialog/div/div/button')
@@ -103,3 +103,4 @@ if len(Guesses) <= 0:
     quit()
 else:
     print("You lost.")
+
