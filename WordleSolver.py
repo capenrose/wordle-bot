@@ -23,12 +23,26 @@ Guesses = WordList.copy()
 SafeLetters = []
 
 #Enter the game
-continue_button = driver.find_element(By.XPATH,'/html/body/div[2]/div[1]/div/div/div/div[2]/div/button[3]')
+continue_button = driver.find_element(By.XPATH,'/html/body/div/div[2]/div/div/div[1]/div/div[2]/div/button')
 continue_button.click()
-time.sleep(1)
-x_button = driver.find_element(By.XPATH,'/html/body/div[2]/div/dialog/div/div/button')
-x_button.click()
-time.sleep(1)
+time.sleep(8)
+continue_button = driver.find_element(By.XPATH,'//*[@id="intsl-skip"]/button')
+continue_button.click()
+time.sleep(4)
+#Attempt to close "x" button, if it is there
+try:
+    x_button = driver.find_element(By.XPATH,'//*[@id="help-dialog"]/div/div/button')
+    x_button.click()
+    time.sleep(4)
+except:
+    pass
+#Attempt to close editor info button, if it is there
+try:
+    popup_button = driver.find_element(By.XPATH,'//*[@id="editorWelcomeNote-dialog"]/div/div/button')
+    popup_button.click()
+    time.sleep(1)
+except:
+    pass
 
 #Perform a guess
 def Guess(y):
